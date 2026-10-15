@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Shorts Video Studio">
+  <title>Shorts Video Studio</title>
+  <defs>
+    <linearGradient id="svs-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E2026"/>
+      <stop offset="1" stop-color="#0E0F11"/>
+    </linearGradient>
+    <linearGradient id="svs-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFE14D"/>
+      <stop offset="1" stop-color="#FFB800"/>
+    </linearGradient>
+    <clipPath id="svs-clap"><rect x="19.5" y="10" width="26" height="6" rx="1.4" transform="rotate(-13 19.5 16)"/></clipPath>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#svs-bg)"/>
+  <rect x="19.5" y="10" width="26" height="6" rx="1.4" transform="rotate(-13 19.5 16)" fill="url(#svs-g)"/>
+  <g clip-path="url(#svs-clap)" fill="#121317">
+    <path d="M24 7 l4.4 0 l-4.4 12 l-4.4 0 z M33.5 4.5 l4.4 0 l-4.4 12 l-4.4 0 z M43 2 l4.4 0 l-4.4 12 l-4.4 0 z"/>
+  </g>
+  <rect x="19.5" y="18.5" width="26" height="38" rx="5" fill="url(#svs-g)"/>
+  <path d="M29 30 Q29 28.4 30.5 29.3 L38.8 34.4 Q40.2 35.3 38.8 36.2 L30.5 41.3 Q29 42.2 29 40.6 Z" fill="#121317"/>
+</svg>
