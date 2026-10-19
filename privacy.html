@@ -5,23 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy · Shorts Video Studio</title>
 <meta name="description" content="How Shorts Video Studio handles your videos, your Google and YouTube data, and other information.">
+<link rel="canonical" href="https://svs.astrocave.org/privacy">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <header>
-  <a class="brand" href="./"><img src="assets/icon-180.png" alt="">Shorts Video <b>Studio</b></a>
-  <nav><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+  <a class="brand" href="/"><img src="assets/icon-180.png" alt="">Shorts Video <b>Studio</b></a>
+  <nav><a href="/">Home</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
 </header>
 <main>
 
 <h1>Privacy Policy</h1>
-<p class="meta">Effective October 14, 2026</p>
+<p class="meta">Effective October 18, 2026</p>
 
 <p>This policy explains what information <strong>Shorts Video Studio</strong> (“the app”, “we”) accesses, how it is used, where it is stored, and the choices you have. Shorts Video Studio is a desktop application that runs on your own computer.</p>
 
-<div class="note"><strong>In short:</strong> the app processes your videos on your computer, has no servers of its own, collects no analytics, and never sells or shares your data. When you connect YouTube, it uses Google's permissions only to upload the clips you choose and to show your channel's name and upload status.</div>
+<div class="note">The app processes media on your Mac. We do not receive your projects. Optional country-level usage reporting is off until you choose to share it. Connecting YouTube sends data directly to Google. Choosing cloud AI sends relevant transcript text and prompts to the provider you select.</div>
 
 <h2>1. Information the app processes</h2>
 <h3>Your videos and media</h3>
@@ -34,17 +35,35 @@
 <tr><td><code>https://www.googleapis.com/auth/youtube.upload</code><br>Manage your YouTube videos</td><td>Uploads the clips you explicitly choose to publish, with the title, description, tags, visibility and schedule you review and approve.</td></tr>
 <tr><td><code>https://www.googleapis.com/auth/youtube.readonly</code><br>View your YouTube account</td><td>Reads your channel's name, handle and picture so you can see which channel is connected, and reads the status of videos the app uploaded so it can confirm each upload (for example, whether YouTube made it public or kept it private).</td></tr>
 </table></div>
-<p>The app does not read your other videos, comments, subscribers, analytics, Gmail, contacts or any other Google data, and it does not request permission to.</p>
+<p>The app uses YouTube account access to identify connected channels and check uploads. It does not request Gmail, contacts or YouTube Analytics permissions. The youtube.readonly permission can technically allow broader YouTube reads than the app currently uses.</p>
 <p>Google sign-in gives the app an access token and a refresh token. These are stored only on your computer: in your operating system's secure credential store (such as the macOS Keychain) when available, otherwise in a private file readable only by your user account. Your Google password is never seen or stored by the app.</p>
 
 <h3>Other platforms</h3>
 <p>For TikTok, Instagram, Facebook, X, LinkedIn and Threads, the app does not sign in or connect to your accounts. It prepares a caption, copies it to your clipboard and opens the platform's own upload page in your web browser; you post yourself. If you record that you posted a clip, the link you enter is saved on your computer only.</p>
 
+<h3>Optional encrypted support reports</h3>
+<p>If you choose “Send diagnostics” for a run or “Send troubleshooting diagnostics” from a job log, SVS shows the exact technical report for your review. Nothing is sent until you choose “Encrypt and send.” Reports can contain the reporting build and the build that ran a job, selected dependency versions, macOS and CPU details, available memory and disk space, video dimensions and timing, allowlisted processing/editor settings, job status, stage timings, technical log excerpts and error stack frames without local variables. Your optional problem description, expected result and reproduction steps are also included. Older jobs may lack some of this evidence. Media files and full transcript files are not attached. Logs can contain clip titles or text excerpts, so review the displayed text for personal information before approving it. SVS applies automatic redaction to URLs inside log lines, local file paths, email addresses and common credential formats. Usage-reporting identifiers are not included.</p>
+<p><strong>Hide video URLs</strong> is selected by default. You can explicitly choose to include the source video URL in a job report; the review screen shows that choice and the resulting URL. SVS removes tracking parameters, query credentials and fragments and uses a canonical YouTube link where possible. URLs inside log lines remain hidden even when you include the source URL. Canceling a review sends nothing and discards the temporary reviewed payload.</p>
+<p>The app encrypts the approved report on your Mac using a public support key before sending it over HTTPS to the SVS support service on Cloudflare Workers. Cloudflare receives encrypted report content; the decryption key is held separately by SVS support and is not included in the app or stored with the report. Standard network processing still exposes connection information to the hosting provider under its own policies; SVS does not store your IP address in the support database. Encrypted reports and their random report references are kept in a separate support database for up to 30 days. Support staff may decrypt an approved report to investigate your problem. Contact us with its report reference for deletion or assistance. Reports are optional, separate from analytics, and do not affect trial access.</p>
+<p>SVS keeps a private, bounded local journal of recent app, preview and processing errors to help investigate problems outside completed jobs. It records technical error messages, operation references and limited settings; it does not record full request bodies, browser activity, environment variables, screenshots or media. The journal is not transmitted automatically. A report can include up to 12 events from the previous 24 hours, displayed for review before sending.</p>
+<p>The app saves a private local Support history containing report references, submission dates, URL-hiding choices and delivery/status receipts, but not diagnostic payloads. A random per-report credential lets this computer check its status; only a hash of that credential is stored on the server. Support can update the status to under review, more information needed or resolved. Status and timestamps are separate metadata retained with the encrypted report for up to 30 days. The app does not automatically send diagnostic reports again after an uncertain upload.</p>
+<p>We email report references and receipt times to our support mailbox through Resend, with retries if needed. These notifications contain no diagnostics, video URLs, customer email addresses or tracking credentials. Provider acceptance does not confirm inbox delivery or human review. Users can contact shortsstudio.support@gmail.com with their report reference; follow-up replies are handled by email. Email correspondence and notification metadata may be retained by the email providers under their policies. Local support references survive Jobs cleanup and app reset.</p>
+<p>Clearing finished jobs from the Jobs display preserves their local log archives and finished clips. Reset application, available in the native Mac app after Mac login-password verification, clears app preferences and working cache, disconnects linked services and turns usage reporting off. Finished clips, local log archives and SVS subscription access are preserved. The Mac login password is checked locally; it is not saved or sent to the web interface, processing engine or support service.</p>
+<h3>SVS accounts, trials and subscription access</h3>
+<p>Account-enabled editions use your email address to send a verification code and manage trial or subscription access. The account service stores your verified email, trial dates, a random installation identity derived from an app-generated public key, and access/session records. It does not read your Mac's hardware serial number or receive your videos, transcripts, Google tokens or cloud AI keys. The installation private key, sign-in session and signed access lease stay in macOS Keychain. Reinstalling the app may preserve those Keychain entries.</p>
+<p>The account service runs on Cloudflare Workers and a separate D1 database. Short-lived, keyed hashes of connection information help limit abuse; raw IP addresses are not stored in the account database. Verification codes expire after ten minutes, and expired challenge/session/rate-limit records are removed through routine cleanup. Account and trial history is retained to maintain access and prevent repeated trial resets. Contact us below to request review or deletion of account data; limited records may be needed to prevent abuse or meet applicable recordkeeping requirements.</p>
+<p>Verification emails are delivered through <a href="https://resend.com/legal/privacy-policy">Resend</a>, which receives the recipient address and message content and handles delivery records under its policy. We do not enable email open or link tracking. Trial access does not require a card or PayPal connection. If you choose to subscribe in a payment-enabled edition, the checkout identifies the payment provider. Card checkout uses Stripe; PayPal is an alternative where available. The provider receives your payment details directly, plus your verified email and a random SVS account reference to associate the purchase with your access. Our account service stores provider subscription, invoice/payment references, billing periods and status to verify access; it does not receive or store your full card number or security code. A checkout marked sandbox/test cannot charge real cards. Production checkout, where enabled, can create real recurring payments only after your approval. See the providers’ <a href="https://stripe.com/privacy">Stripe</a> and <a href="https://www.paypal.com/us/legalhub/paypal/privacy-full">PayPal</a> privacy policies.</p>
+<p>Account and payment records are separate from optional usage statistics. Turning usage reporting off does not affect account access or trial eligibility. Signing out removes the local sign-in session and access lease while preserving the installation identity; it does not automatically delete server account history or your projects.</p>
+
 <h3>AI-written titles and descriptions</h3>
-<p>Suggested titles, descriptions and hashtags are written by an AI model running locally on your computer (through Ollama) or by a built-in template. Clip text is not sent to any outside AI service by the app.</p>
+<p>You can choose built-in rules, a local model through Ollama, or a cloud AI provider in Settings. Cloud options include OpenAI, Anthropic, Google Gemini, OpenRouter, Groq, or a compatible endpoint you configure. When you use cloud AI, relevant transcript text, instructions and prompts are sent directly from your Mac to that service for ranking clips, writing copy or generating picture prompts. The provider handles that data under its own terms and privacy policy, including its retention and training settings. OpenRouter may route requests to the model provider you select. A custom or remote Ollama endpoint receives requests at the address you configure. Use built-in rules or a localhost model if you want these steps to stay on your computer. API keys are stored locally in the system credential store when available, with a private-file fallback.</p>
+
+<h3>Optional country-level usage statistics</h3>
+<p>Versions offering usage reporting ask before sending any usage report. Declining has no effect on app features, trial eligibility or subscription access. You can turn sharing on or off anytime under <strong>Privacy</strong>. If you opt in, the app sends at most one successful usage report per UTC day while it is running, containing the event type, app version and consent-format version. Our Cloudflare service estimates the country from the network connection and records only totals grouped by date, country and app version. It does not store your IP address in the analytics database or assign a persistent analytics identifier. Reports do not include videos, transcripts, filenames, email addresses, account details, Google data, license identifiers or precise location. A VPN can affect the estimated country.</p>
+<p>We use these totals to understand geographic adoption and which app versions are in use. The service runs on Cloudflare Workers and D1. Cloudflare necessarily processes connection information, including IP addresses, to deliver and secure the service under its <a href="https://www.cloudflare.com/privacypolicy/">privacy policy</a>. Application request logging is disabled. Aggregate daily totals are automatically removed from the active analytics database after 90 days; provider recovery backups may persist for their separate retention period. Turning sharing off stops future reports; existing totals cannot be linked back to your installation for individual removal. We do not combine analytics with licensing or payment records, sell this information, share it for advertising, or track activity across other companies' apps or sites.</p>
 
 <h2>2. How information is used</h2>
-<p>Information is used only to provide the app's features that you can see and control: making clips, showing which channels are connected, and uploading and confirming the posts you choose. It is not used for advertising, profiling, or training AI models.</p>
+<p>Information is used only to provide the app's features that you can see and control: making clips, managing account/trial access where offered, showing which channels are connected, and uploading and confirming the posts you choose. We do not use this information for advertising, profiling or training AI models. Optional cloud providers handle submitted data under their own policies.</p>
 
 <h2>3. Limited Use of Google user data</h2>
 <p>Shorts Video Studio's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Specifically:</p>
@@ -52,17 +71,17 @@
   <li>Google user data is used only to provide and improve the user-facing features described above.</li>
   <li>It is not transferred to anyone, except to Google/YouTube itself as needed to upload your videos, when required by law, or with your explicit consent.</li>
   <li>It is not used or transferred for advertising, sold, or used to determine creditworthiness or for lending purposes.</li>
-  <li>No human reads your Google user data. We have no access to it: it never leaves your computer except when sent directly to Google.</li>
+  <li>Your connected-account credentials stay on your computer and are sent directly to Google when needed. SVS support does not have routine access to your Google user data. If you choose to submit specific information in a reviewed support report, authorized support staff may read only the information you explicitly agree to share to investigate your issue. Reports redact account credentials and other common sensitive fields before review; you can cancel without sending.</li>
 </ul>
 
 <h2>4. Sharing</h2>
-<p>We do not sell, rent or share your information. The only transfers are the ones you start: uploading a clip sends that video and its details directly from your computer to YouTube under your account.</p>
+<p>We do not sell or rent your information. Uploading a clip sends that video and its details directly to YouTube under your account. Using an optional cloud AI service sends relevant transcript text and prompts to the provider you choose. Media downloads and model downloads also contact the relevant hosting services. These services receive normal connection information, such as your IP address.</p>
 
 <h2>5. Storage, retention and deletion</h2>
 <ul>
   <li>Videos, clips and project files stay on your computer until you delete them. The app includes a Trash with permanent delete, and a cache cleanup.</li>
   <li>To remove the app's access to a YouTube channel, use <strong>Accounts → Disconnect</strong> in the app, which deletes that channel's saved sign-in from your computer. You can also revoke access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
-  <li>Uninstalling the app and deleting its folders removes everything it stored. Videos already uploaded to YouTube remain on YouTube until you remove them there.</li>
+  <li>Uninstalling the app alone may leave settings, cache files and Keychain entries. Disconnect accounts and remove saved AI keys in the app, then delete its Application Support and cache folders if you want to remove local data. Videos already uploaded to YouTube remain there until you remove them on YouTube. Cloud AI providers may retain submitted data according to their policies.</li>
 </ul>
 
 <h2>6. Security</h2>
@@ -74,16 +93,22 @@
 <h2>8. Children</h2>
 <p>The app is not directed to children under 13 and does not knowingly collect information from them.</p>
 
+<h2>App updates</h2>
+<p>The direct-download Mac app can check for updates over HTTPS using Sparkle through Check for Updates in the Shorts Video Studio menu. Releases that offer automatic checks include an Automatically Check for Updates menu setting to turn them on or off. The update server receives normal connection information and an updater request identifying the app/version. Sparkle system-profile reporting is disabled. Update checks do not send your projects, media, account credentials or troubleshooting reports, and are separate from optional usage statistics. Updates are verified against the app's pinned signing key. SVS asks before installing an update or restarting; automatic installation is disabled.</p>
+
 <h2>9. Changes</h2>
 <p>If this policy changes, the updated version will be posted on this page with a new effective date.</p>
 
-<h2>10. Contact</h2>
+<h2>10. This website</h2>
+<p>This website is hosted on Cloudflare. Cloudflare receives normal website request information, including IP addresses, browser information and requested URLs, to deliver pages and provide security. No app projects, Google tokens or API keys are uploaded to this website. See the <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a>.</p>
+
+<h2>11. Contact</h2>
 <p>Questions about this policy or your data: <a href="mailto:shortsstudio.support@gmail.com">shortsstudio.support@gmail.com</a></p>
 </main>
 <footer>
   <span>© 2026 Shorts Video Studio</span>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="terms.html">Terms of Service</a>
+  <a href="/privacy">Privacy Policy</a>
+  <a href="/terms">Terms of Service</a>
   <a href="mailto:shortsstudio.support@gmail.com">shortsstudio.support@gmail.com</a>
 </footer>
 </body>
