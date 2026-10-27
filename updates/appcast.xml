@@ -1,10 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
   <channel>
     <title>Shorts Video Studio updates</title>
     <link>https://svs.astrocave.org/</link>
     <description>Verified public releases of Shorts Video Studio.</description>
     <language>en</language>
-    <!-- Private test candidates are not offered as public updates. -->
+    <item>
+      <title>Shorts Video Studio 0.2.26</title>
+      <pubDate>Tue, 27 Oct 2026 20:53:19 GMT</pubDate>
+      <description>Clearer account and computer management, fractional timing fixes and Check for updates. Apple notarized.</description>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/ModDayJob/shorts-video-studio/releases/download/v0.2.26-build36/Shorts-Video-Studio-0.2.26-arm64.dmg" sparkle:version="36" sparkle:shortVersionString="0.2.26" sparkle:edSignature="AOJqVpnP4JnrN4iYQp3TdmJfEClsrLjPCu/F/hZHUEzsMCImkpvachnd2m3pzUTin+7EIamE0flN7qdBHoivBA==" length="512659299" type="application/octet-stream" />
+    </item>
   </channel>
 </rss>

@@ -24,3 +24,5 @@ table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}th,td{tex
 .tablewrap{overflow-x:auto}
 footer{border-top:1px solid var(--line);padding-top:18px;padding-bottom:30px;font-size:14px;color:var(--text-2);display:flex;flex-wrap:wrap;gap:8px 18px}
 footer a{color:var(--text-2)}
+
+a.download{display:inline-block;background:var(--accent);color:#111;padding:12px 20px;border-radius:9px;font-weight:700;text-decoration:none}a.download:focus-visible{outline:3px solid var(--text);outline-offset:4px}
