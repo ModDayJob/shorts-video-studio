@@ -6,6 +6,13 @@
     <description>Verified public releases of Shorts Video Studio.</description>
     <language>en</language>
     <item>
+      <title>Shorts Video Studio 0.2.27</title>
+      <pubDate>Wed, 28 Oct 2026 04:02:25 GMT</pubDate>
+      <description>Native Save dialogs for MP4 and caption exports, with verified shared Python source and accurate diagnostic build labels. Apple notarized.</description>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/ModDayJob/shorts-video-studio/releases/download/v0.2.27-build44/Shorts-Video-Studio-0.2.27-arm64.dmg" sparkle:version="44" sparkle:shortVersionString="0.2.27" sparkle:edSignature="RcP68YdUYPb9S12PBUSM6w5YPXDc5mzwHC63uFXcCr9ZtMDzoiu3Dq1alzKN1gRq40BXl2gIrwoi06nnhQpKDA==" length="524839117" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Shorts Video Studio 0.2.26</title>
       <pubDate>Tue, 27 Oct 2026 20:53:19 GMT</pubDate>
       <description>Clearer account and computer management, fractional timing fixes and Check for updates. Apple notarized.</description>
